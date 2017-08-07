@@ -11,3 +11,4 @@
 ## Good Applications
 
 - [Echoes Player - Angular Version](https://github.com/orizens/echoes-player)
+- [Admin panel framework based on Angular, Bootstrap 4 and Angular CLI](https://github.com/Hulva/ng2-admin)
