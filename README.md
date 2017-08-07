@@ -7,3 +7,7 @@
 ## 爬坑
 
 * [Using non-Typescript third party library](./about-using-thirdparty-lib/README.md)
+
+## Good Applications
+
+- [Echoes Player - Angular Version](https://github.com/orizens/echoes-player)
