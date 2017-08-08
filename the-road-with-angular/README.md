@@ -42,3 +42,122 @@
 ### Data Flow
 
 ![Data Flow](./data-flow.PNG)
+
+## Content projection
+
+### tagName
+
+```angular
+<child *ngFor="let c of childs" [child]="c">
+    <span>{{ child.name }}</span>
+    <h1>{{ child.desc }}</h1>
+</child>
+```
+
+```angular
+<ng-content select="span"></ng-content>
+<ng-content select="h1"></ng-content>
+```
+
+* `<ng-content select="span"></ng-content>` will match `<span>{{ child.name }}</span>`
+* `<ng-content select="h1"></ng-content>` will match `<h1>{{ child.desc }}</h1>`
+
+### className [better way]
+
+```angular
+<child *ngFor="let c of childs" [child]="c">
+    <span class="name">{{ child.name }}</span>
+    <h1 class="desc">{{ child.desc }}</h1>
+</child>
+```
+
+```angular
+<ng-content select=".name"></ng-content>
+<ng-content select=".desc"></ng-content>
+```
+
+* `<ng-content select=".name"></ng-content>` will match `<span class="name">{{ child.name }}</span>`
+* `<ng-content select=".desc"></ng-content>` will match `<h1 class="desc">{{ child.desc }}</h1>`
+
+## Lifecycle Hooks
+
+![Lifecycle Hooks](./lifecycle-hooks.PNG)
+
+* constructor - Invoked when Angular creates a component or directive by calling **new** on the class
+* ngOnChanges - Invoked **every** time there is a change in one of the **input** properties of the component
+* ngOnInit - Invoked when given component has been initialized. Called **once** after the first **ngOnChanges**
+* ngDoCheck - Invoked when the change detector of given component is invoked. We could implement our own change detection algorithm for the given component
+* ngOnDestroy - Invoked just before Angular destroys the component. Use this hook to **unsubscribe observables** and **detach event handlers to avoid memory leaks**
+* ngAfterContentInit - Invoked after Angular performs any **content projection** into components view
+* ngAfterContentChecked - Invoked **each time** the content of given component has been checked by  the change detection mechanism of Angular
+* ngAfterViewInit - Invoked when component's view has been fully initialized
+* ngAfterViewChecked - Invoked **each time** the view of given component has been checked by the change detection mechanism of Angular
+
+> NOTE: **ngDoCheck** and **ngOnChanges** should not be implemented together on the same component. **ngAfterContentInit ngAfterContentChecked ngAfterViewInit ngAfterViewChecked** are only called for component and not directives.
+
+## ViewChildren & ContentChildren
+
+```angular
+<h4 #header>View Jokes</h4>
+<br>
+<app-joke *ngFor="let j of jokes" [data]="j">
+  <span class="setup">{{ j.setup }}?</span>
+  <h1 class="punchline">{{ j.punchline }}</h1>
+</app-joke>
+<hr>
+<h4>Content Jokes</h4>
+<br>
+<ng-content></ng-content>
+```
+
+> 以数据来源区分：来自自身Component 来自上一层Component
+
+## Directives
+
+> Components are directives with a view
+
+使用 attribute selectors 将 directives 关联到已存在的 components：
+
+`<element aDirective></element>`
+
+```ANGUALR
+constructor(private el: ElementRef, private renderer)
+```
+
+## HostListener & HostBinding
+
+@HostListener This is a function decorator that accepts an event name as an argument. When that event gets fired on the host element it calls the associated function.
+
+```angular
+  constructor(private el: ElementRef, private renderer: Renderer) {
+    //  renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gray');
+  }
+
+  @HostListener('mouseover') onMouseOver() {
+    let part = this.el.nativeElement.querySelector('.card-text');
+    this.renderer.setElementStyle(part, 'display', 'block');
+  }
+
+  @HostListener('mouseout') onMouseOut() {
+    let part = this.el.nativeElement.querySelector('.card-text');
+    this.renderer.setElementStyle(part, 'display', 'none');
+  }
+```
+
+As well as listening to **output events** from the host element a directive can also bind to **input properties** in the host element with @HostBinding. This directive can change the properties of the host element, such as the list of classes that are set on the host element as well as a number of other properties. Using the @HostBinding decorator a directive can link an internal property to an input property on the host element. So if the internal property changed the input property on the host element would also change.
+
+```angular
+  @HostBinding('class.card-outline-primary') private isHovering: boolean;
+
+  constructor(private el: ElementRef, private renderer: Renderer) {
+    //  renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gray');
+  }
+
+  onMouseOver() {
+    this.isHovering = true;
+  }
+
+  onMouseOut() {
+    this.isHovering = false;
+  }
+```

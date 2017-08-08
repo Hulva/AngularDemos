@@ -1,5 +1,12 @@
 <app-joke-form (jokeCreated)="addJoke($event)"></app-joke-form>
+<hr>
+<h4 #header>View Jokes</h4>
+<br>
 <app-joke *ngFor="let j of jokes" [data]="j">
   <span class="setup">{{ j.setup }}?</span>
   <h1 class="punchline">{{ j.punchline }}</h1>
 </app-joke>
+<hr>
+<h4>Content Jokes</h4>
+<br>
+<ng-content></ng-content>

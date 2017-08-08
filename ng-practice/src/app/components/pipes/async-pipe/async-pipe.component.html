@@ -1,0 +1,26 @@
+<div class="card card-block">
+  <h4 class="card-title">AsyncPipe</h4>
+  <p class="card-text" ngNonBindable>{{ promiseData }}</p>
+  <p class="card-text">{{ promiseData }}</p>
+</div>
+<div class="card card-block">
+  <h4 class="card-title">AsyncPipe</h4>
+  <p class="card-text" ngNonBindable>{{ promise }}</p>
+  <p class="card-text">{{ promise | async }}</p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">AsyncPipe</h4>
+  <p class="card-text" ngNonBindable>{{ observableData }}</p>
+  <p class="card-text">{{ observableData }}</p>
+</div>
+<div class="card card-block">
+  <h4 class="card-title">AsyncPipe</h4>
+  <p class="card-text" ngNonBindable>{{ observable | async }}</p>
+  <p class="card-text">{{ observable | async }}</p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">Custom Pipe</h4>
+  <img [src]="imageUrl | myImagePipe:'http://s3.amazonaws.com/uifaces/faces/twitter/sillyleo/128.jpg'" />
+</div>
