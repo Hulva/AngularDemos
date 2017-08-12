@@ -38,6 +38,8 @@ import {
 } from './components/react-demo/form/form.component';
 import { AsyncPipeComponent } from './components/pipes/async-pipe/async-pipe.component';
 import { MyImagePipePipe } from './components/pipes/my-image-pipe.pipe';
+import { CleanPipePipe } from './pipes/clean-pipe.pipe';
+import { SignupComponent } from './components/forms/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { MyImagePipePipe } from './components/pipes/my-image-pipe.pipe';
     CardHoverDirective,
     FormComponent,
     AsyncPipeComponent,
-    MyImagePipePipe
+    MyImagePipePipe,
+    CleanPipePipe,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

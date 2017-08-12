@@ -19,7 +19,7 @@
     <app-joke-list>
       <app-joke [data]="joke">
         <span class="setup">{{ joke.setup }}?</span>
-        <h1 class="punchline">{{ joke.punchline }}</h1>
+        <h1 class="punchline">{{ joke.punchline | clean: 'boo,damn,hell' }}</h1>
       </app-joke>
     </app-joke-list>
   </div>
@@ -111,4 +111,7 @@
         <li *ngFor="let v of [1,2,3,4,5,6] | slice:2:-1"> ④   {{v}}   </li>   </ul>   </div>
   </div>
   <app-async-pipe></app-async-pipe>
+
+  <h3>Forms</h3>
+  <app-signup></app-signup>
 </div>

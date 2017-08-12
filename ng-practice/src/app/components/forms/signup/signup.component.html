@@ -1,0 +1,64 @@
+<form [formGroup]="signupForm">
+  <fieldset formGroupName="name">
+    <div class="form-group" [ngClass]="{
+      'has-error': signupForm.controls.name.invalid && signupForm.controls.name.dirty, 
+      'has-success': signupForm.controls.name.valid && signupForm.controls.name.dirty
+    }">
+      <label>First Name</label>
+      <input type="text"   class="form-control" formControlName="firstName" required>
+    </div>
+    <p  class="alert alert-danger" *ngIf="signupForm.controls.name.invalid && signupForm.controls.name.dirty">Name is required!</p>
+    <pre>Form control state: Dirty? {{ signupForm.controls.name.dirty }} & Pristine? {{ signupForm.controls.name.pristine }}
+    </pre>
+    <div class="form-group" [ngClass]="{
+      'has-error': signupForm.controls.name.invalid && signupForm.controls.name.dirty, 
+      'has-success': signupForm.controls.name.valid && signupForm.controls.name.dirty
+    }">
+      <label>Last Name</label>
+      <input type="text"   class="form-control" formControlName="lastName" required>
+    </div>
+    <pre>Form control state: Dirty? {{ signupForm.controls.name.dirty }} & Pristine? {{ signupForm.controls.name.pristine }}
+    </pre>
+  </fieldset>
+
+  <div class="form-group" [ngClass]="{
+      'has-error': signupForm.controls.email.invalid && signupForm.controls.email.dirty, 
+      'has-success': signupForm.controls.email.valid && signupForm.controls.email.dirty
+    }">
+    <label>Email</label>
+    <input type="email"   class="form-control" formControlName="email" required>
+    <p  class="alert alert-danger" *ngIf="signupForm.controls.email.invalid && signupForm.controls.email.dirty">  Field is invalid   </p>
+  </div>
+  <pre>Form control state: Touched? {{ signupForm.controls.email.touched  }} & Untouched? {{ signupForm.controls.email.untouched  }}
+    </pre>
+
+  <div class="form-group" [ngClass]="{
+      'has-error': signupForm.controls.password.invalid && signupForm.controls.password.dirty, 
+      'has-success': signupForm.controls.password.valid && signupForm.controls.password.dirty
+    }">
+    <label>Password</label>
+    <input type="password" placeholder="8-20 characters"   class="form-control" formControlName="password" required>
+    <div  class="alert alert-danger" *ngIf="signupForm.controls.password.invalid && signupForm.controls.password.dirty">  Password is required <br>
+      <p  class="alert alert-danger" *ngIf="signupForm.controls.password.errors.minlength">  Password must be at least 8 characters long   </p>
+    </div>
+
+  </div>
+  <pre>Form control state: Valid? {{ signupForm.controls.password.valid  }} & Invalid? {{ signupForm.controls.password.invalid  }}
+    </pre>
+
+  <div class="form-group" [ngClass]="{
+      'has-error': signupForm.controls.language.invalid && signupForm.controls.language.dirty, 
+      'has-success': signupForm.controls.language.valid && signupForm.controls.language.dirty
+    }">
+    <label>Language</label>
+    <select class="form-control" formControlName="language">       
+      <option value="">Please select a language</option>
+      <option *ngFor="let lang of langs" 
+      [value]="lang">{{lang}}</option>     
+    </select>
+  </div>
+
+  <pre>
+  {{signupForm.value | json}}
+  </pre>
+</form>

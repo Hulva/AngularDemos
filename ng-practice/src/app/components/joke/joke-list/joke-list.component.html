@@ -4,7 +4,7 @@
 <br>
 <app-joke *ngFor="let j of jokes" [data]="j">
   <span class="setup">{{ j.setup }}?</span>
-  <h1 class="punchline">{{ j.punchline }}</h1>
+  <h1 class="punchline">{{ j.punchline | clean: 'boo,damn,hell' }}</h1>
 </app-joke>
 <hr>
 <h4>Content Jokes</h4>
