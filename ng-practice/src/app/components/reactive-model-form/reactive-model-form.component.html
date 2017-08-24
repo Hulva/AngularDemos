@@ -1,0 +1,29 @@
+<h3>Reactive Model Form</h3>
+
+<h4>Case one: </h4>
+
+<div>
+  <p>a search term printed for every keypress</p>
+  <input type="search" name="search" id="search" class="form-control" placeholder="Please enter search term" [formControl]="searchField">
+  <hr/>
+  <ul>
+    <li *ngFor="let search of searches">{{ search }}</li>
+  </ul>
+</div>
+
+<div>
+    <p>a search term printed if there's no more input for <b>debounceTime</b> number of milliseconds</p>
+    <input type="search1" name="search1" id="search1" class="form-control" placeholder="Please enter search term" [formControl]="searchField1">
+    <hr/>
+    <ul>
+      <li *ngFor="let search1 of searches1">{{ search1 }}</li>
+    </ul>
+  </div>
+
+  <h4>Case two: Template Driven Forms</h4>
+
+  <ul>
+    <li>template driven forms and model driven forms</li>
+    <li><b>ngModel</b> directive to link template input controls to properties on the component</li>
+  </ul>
+  

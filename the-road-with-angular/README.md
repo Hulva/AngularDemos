@@ -161,3 +161,40 @@ As well as listening to **output events** from the host element a directive can 
     this.isHovering = false;
   }
 ```
+
+## Reactive Programming with RxJS
+
+### Stream & Reactive Programming
+
+> Streams are a sequence of values over time.
+
+> Reactive programming is the idea that you can create your entire program just by defining the different streams and the operations that are performed on those streams.
+
+### Observable and how it related to RxJS
+
+
+### Write reactive code using pure RxJS
+
+
+### Operators and Marble Diagrams
+
+
+
+### Where to use reactive programming in Angular
+
+
+## Pipes
+
+`{{ 1234.56 | currency : 'USD' }}`
+
+1234.56  => $123,4.56
+
+
+## Forms
+
+> template driven & model driven
+
+### Model Driven Forms
+
+> define a form model on component and link it to existing HTML form controls 
+

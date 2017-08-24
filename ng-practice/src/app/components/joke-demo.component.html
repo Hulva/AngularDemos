@@ -1,0 +1,9 @@
+<h2>Joke Demo</h2>
+<div class="row">
+  <app-joke-list>
+    <app-joke [data]="joke">
+      <span class="setup">{{ joke.setup }}?</span>
+      <h1 class="punchline">{{ joke.punchline | clean: 'boo,damn,hell' }}</h1>
+    </app-joke>
+  </app-joke-list>
+</div>

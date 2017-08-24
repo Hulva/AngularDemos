@@ -41,6 +41,13 @@ import { MyImagePipePipe } from './components/pipes/my-image-pipe.pipe';
 import { CleanPipePipe } from './pipes/clean-pipe.pipe';
 import { SignupComponent } from './components/forms/signup/signup.component';
 
+import { AppRoutingModule } from './app-routing.module';
+import { ArchitectureWithCompComponent } from './components/architecture-with-comp.component';
+import { JokeDemoComponent } from './components/joke-demo.component';
+import { PipeDemoComponent } from './components/pipe-demo.component';
+import { ReactiveModelFormComponent } from './components/reactive-model-form/reactive-model-form.component';
+import { DiProvidersComponent } from './components/di-providers/di-providers.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,12 +62,18 @@ import { SignupComponent } from './components/forms/signup/signup.component';
     AsyncPipeComponent,
     MyImagePipePipe,
     CleanPipePipe,
-    SignupComponent
+    SignupComponent,
+    ArchitectureWithCompComponent,
+    JokeDemoComponent,
+    PipeDemoComponent,
+    ReactiveModelFormComponent,
+    DiProvidersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

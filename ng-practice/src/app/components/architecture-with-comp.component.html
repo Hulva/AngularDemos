@@ -1,0 +1,14 @@
+<div class="panel panel-info">
+  <div class="panel-heading">Architecting with Component Demo</div>
+  <div class="panel-body">
+    <div class="col-md-12 col-sm-12">
+      <app-header (loginChanged)="loggedIn = $event"></app-header>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <app-sidebar (searchTermChanged)="searchTerm = $event"></app-sidebar>
+    </div>
+    <div class="col-md-8 col-sm-8">
+      <app-content [searchTerm]="searchTerm"></app-content>
+    </div>
+  </div>
+</div>

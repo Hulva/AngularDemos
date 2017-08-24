@@ -7,7 +7,7 @@ import {
   FormControl,
   Validators,
   FormBuilder
-} from "@angular/forms";
+} from '@angular/forms';
 import 'rxjs/Rx';
 
 @Component({
@@ -17,14 +17,14 @@ import 'rxjs/Rx';
 })
 export class FormComponent implements OnInit {
   form: FormGroup;
-  comment = new FormControl("", Validators.required);
-  name = new FormControl("", Validators.required);
-  email = new FormControl("", [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]);
+  comment = new FormControl('', Validators.required);
+  name = new FormControl('', Validators.required);
+  email = new FormControl('', [Validators.required, Validators.pattern('[^ @]*@[^ @]*')]);
   constructor(fb: FormBuilder) {
     this.form = fb.group({
-      "comment": this.comment,
-      "name": this.name,
-      "email": this.email
+      'comment': this.comment,
+      'name': this.name,
+      'email': this.email
     });
     this.form.valueChanges
     // .filter(data => this.form.valid)
@@ -56,7 +56,7 @@ export class FormComponent implements OnInit {
     // }
 
   onSubmit() {
-    console.log("Submitted!");
+    console.log('Submitted!');
   }
 
 
