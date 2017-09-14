@@ -1,3 +1,31 @@
-<p>
-  di-providers works!
-</p>
+<h3>Dependency Injection & Providers</h3>
+
+<div class="row">
+  <div class="col-xs-6">
+    <parent>
+      <child></child>
+    </parent>
+  </div>
+  <div class="col-xs-6">
+    <parent>
+      <child></child>
+    </parent>
+  </div>
+</div>
+
+<div class="row">
+  <ul>
+    <li>
+      If we want an instance of a dependency to be shared globally and share state across the application we configure it on the
+      <code>NgModule</code>.
+    </li>
+    <li>
+      If we want a separate instance of a dependency to be shared across each instance of a component and it’s children we configure
+      it on the <code>components providers</code> property.
+    </li>
+    <li>
+      If we want a separate instance of a dependency to be shared across each instance of a component and only it’s view children
+      we configure it on the <code>components viewProviders</code> property.
+    </li>
+  </ul>
+</div>

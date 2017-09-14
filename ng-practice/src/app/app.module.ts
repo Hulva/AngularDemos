@@ -8,6 +8,7 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
+import { HttpModule } from '@angular/http'; 
 
 import {
   AppComponent
@@ -47,6 +48,11 @@ import { JokeDemoComponent } from './components/joke-demo.component';
 import { PipeDemoComponent } from './components/pipe-demo.component';
 import { ReactiveModelFormComponent } from './components/reactive-model-form/reactive-model-form.component';
 import { DiProvidersComponent } from './components/di-providers/di-providers.component';
+import { ParentComponent } from './components/di-providers/parent.component';
+
+import { SimpleService } from './components/di-providers/simple.service';
+import { ChildComponent } from './components/di-providers/child.component';
+import { HttpDemoComponent } from './components/http-demo/http-demo.component';
 
 @NgModule({
   declarations: [
@@ -67,13 +73,17 @@ import { DiProvidersComponent } from './components/di-providers/di-providers.com
     JokeDemoComponent,
     PipeDemoComponent,
     ReactiveModelFormComponent,
-    DiProvidersComponent
+    DiProvidersComponent,
+    ParentComponent,
+    ChildComponent,
+    HttpDemoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

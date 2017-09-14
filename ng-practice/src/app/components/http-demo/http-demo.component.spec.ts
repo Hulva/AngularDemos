@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DiProvidersComponent } from './di-providers.component';
+import { HttpDemoComponent } from './http-demo.component';
 
-describe('DiProvidersComponent', () => {
-  let component: DiProvidersComponent;
-  let fixture: ComponentFixture<DiProvidersComponent>;
+describe('HttpDemoComponent', () => {
+  let component: HttpDemoComponent;
+  let fixture: ComponentFixture<HttpDemoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DiProvidersComponent ]
+      declarations: [ HttpDemoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DiProvidersComponent);
+    fixture = TestBed.createComponent(HttpDemoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
