@@ -18,6 +18,6 @@
     <button class="btn btn-danger" (click)="doGETWithHeaders()">With Headers</button>
   </div>
 </div>
-<div class="">
-  <p>{{ result }}</p>
+<div class="row">
+  <pre style="min-height:240px">{{ result | json }}</pre>
 </div>
