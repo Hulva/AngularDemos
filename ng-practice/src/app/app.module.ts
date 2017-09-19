@@ -8,7 +8,7 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
-import { HttpModule } from '@angular/http'; 
+import { HttpModule } from '@angular/http';
 
 import {
   AppComponent
@@ -53,6 +53,9 @@ import { ParentComponent } from './components/di-providers/parent.component';
 import { SimpleService } from './components/di-providers/simple.service';
 import { ChildComponent } from './components/di-providers/child.component';
 import { HttpDemoComponent } from './components/http-demo/http-demo.component';
+import { SearchComponent } from './components/search/search.component';
+import { SearchService } from './components/search/search.service';
+import { SearchWithObservableService } from './components/search/search-with-observable.service';
 
 @NgModule({
   declarations: [
@@ -76,7 +79,8 @@ import { HttpDemoComponent } from './components/http-demo/http-demo.component';
     DiProvidersComponent,
     ParentComponent,
     ChildComponent,
-    HttpDemoComponent
+    HttpDemoComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +89,7 @@ import { HttpDemoComponent } from './components/http-demo/http-demo.component';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [],
+  providers: [SearchService, SearchWithObservableService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -198,3 +198,13 @@ As well as listening to **output events** from the host element a directive can 
 
 > define a form model on component and link it to existing HTML form controls 
 
+## Observable
+
+### map
+
+### switch
+
+<code>switch</code> expects a stream of <code>Observables</code>, when it get an <code>Observable</code> pushed onto it’s input stream it unsubscribes from any previous <code>Observables</code> and subscribes to the new one and then emits any values from that <code>Observable</code> onto it’s output stream.
+
+Using <code>switch</code> with <code>map</code> is such a common occurrence that there is a combined operator called <code>switchMap</code>
+

@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6 col-sm-6">
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="search" name="search" id="search" class="form-control" placeholder="Enter search string" #search>
+      </div>
+      <button class="btn btn-primary" (click)="doSearch(search.value)">Search With Promise</button>
+    </form>
+    <div class="text-center">
+      <p class="lead" *ngIf="loading">Loading...</p>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item"   *ngFor="let track of itunes.results">
+        <img src="{{track.thumbnail}}">
+        <a target="_blank"   href="{{track.link}}">{{ track.track }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="search" class="form-control" placeholder="Enter search string" [formControl]="searchField">
+      </div>
+    </form>
+    <div class="text-center">
+      <p class="lead" *ngIf="loading1">Loading...</p>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item"   *ngFor="let track of results | async">
+        <img src="{{track.thumbnail}}">
+        <a target="_blank"   href="{{track.link}}">{{ track.track }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

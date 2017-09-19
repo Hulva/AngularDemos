@@ -8,8 +8,9 @@ import {SignupComponent} from './components/forms/signup/signup.component';
 import {ReactiveModelFormComponent} from './components/reactive-model-form/reactive-model-form.component';
 import {DiProvidersComponent} from './components/di-providers/di-providers.component';
 import { HttpDemoComponent } from './components/http-demo/http-demo.component';
+import { SearchComponent } from './components/search/search.component';
 
-const routes : Routes = [
+const routes: Routes = [
   {
     path: 'architectureWithComp',
     component: ArchitectureWithCompComponent
@@ -41,6 +42,10 @@ const routes : Routes = [
   {
     path: 'httpDemo',
     component: HttpDemoComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   }
 ];
 
