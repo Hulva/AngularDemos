@@ -8,7 +8,7 @@ import { SearchItem } from './search-item';
 
 @Injectable()
 export class SearchService {
-  apiRoot: string = 'http://itunes.apple.com/search';
+  apiRoot = 'https://itunes.apple.com/search';
   results: SearchItem[];
   loading: boolean;
 

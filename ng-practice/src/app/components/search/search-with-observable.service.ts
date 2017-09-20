@@ -4,7 +4,7 @@ import { SearchItem } from './search-item';
 
 @Injectable()
 export class SearchWithObservableService {
-  apiRoot: string = 'http://itunes.apple.com/search';
+  apiRoot = 'https://itunes.apple.com/search';
 
   constructor(private http: Http) { }
 
