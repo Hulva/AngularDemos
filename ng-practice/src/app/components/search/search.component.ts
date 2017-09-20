@@ -11,8 +11,8 @@ import { SearchWithObservableService } from './search-with-observable.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  private loading: boolean = false;
-  private loading1: boolean = false;
+  private loading = false;
+  private loading1 = false;
   private results: Observable<SearchItem[]>;
   private searchField: FormControl;
 
