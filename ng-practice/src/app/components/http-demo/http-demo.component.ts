@@ -19,7 +19,7 @@ import {
 })
 export class HttpDemoComponent implements OnInit {
 
-  apiRoot = 'http://httpbin.org';
+  apiRoot = 'https://httpbin.org';
   result: string;
 
   constructor(private http: Http) {}
