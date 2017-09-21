@@ -8,7 +8,7 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import {
   AppComponent
@@ -56,6 +56,8 @@ import { HttpDemoComponent } from './components/http-demo/http-demo.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchService } from './components/search/search.service';
 import { SearchWithObservableService } from './components/search/search-with-observable.service';
+import { JsonpDemoComponent } from './components/jsonp-demo/jsonp-demo.component';
+import { SearchJsonpService } from './components/jsonp-demo/search-jsonp.service';
 
 @NgModule({
   declarations: [
@@ -80,16 +82,18 @@ import { SearchWithObservableService } from './components/search/search-with-obs
     ParentComponent,
     ChildComponent,
     HttpDemoComponent,
-    SearchComponent
+    SearchComponent,
+    JsonpDemoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    JsonpModule
   ],
-  providers: [SearchService, SearchWithObservableService],
+  providers: [SearchService, SearchWithObservableService, SearchJsonpService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

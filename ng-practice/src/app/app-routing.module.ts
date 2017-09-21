@@ -9,6 +9,7 @@ import {ReactiveModelFormComponent} from './components/reactive-model-form/react
 import {DiProvidersComponent} from './components/di-providers/di-providers.component';
 import { HttpDemoComponent } from './components/http-demo/http-demo.component';
 import { SearchComponent } from './components/search/search.component';
+import { JsonpDemoComponent } from './components/jsonp-demo/jsonp-demo.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchComponent
+  },
+  {
+    path: 'jsonp',
+    component: JsonpDemoComponent
   }
 ];
 
