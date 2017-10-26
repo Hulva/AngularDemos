@@ -10,6 +10,7 @@ import {DiProvidersComponent} from './components/di-providers/di-providers.compo
 import { HttpDemoComponent } from './components/http-demo/http-demo.component';
 import { SearchComponent } from './components/search/search.component';
 import { JsonpDemoComponent } from './components/jsonp-demo/jsonp-demo.component';
+import { ElasticsearchDemoComponent } from './components/elasticsearch-demo/elasticsearch-demo.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'jsonp',
     component: JsonpDemoComponent
+  },
+  {
+    path: 'es',
+    component: ElasticsearchDemoComponent
   }
 ];
 

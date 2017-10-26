@@ -58,6 +58,8 @@ import { SearchService } from './components/search/search.service';
 import { SearchWithObservableService } from './components/search/search-with-observable.service';
 import { JsonpDemoComponent } from './components/jsonp-demo/jsonp-demo.component';
 import { SearchJsonpService } from './components/jsonp-demo/search-jsonp.service';
+import { ElasticsearchDemoComponent } from './components/elasticsearch-demo/elasticsearch-demo.component';
+import { ElasticsearchService } from './components/elasticsearch-demo/elasticsearch.service';
 
 @NgModule({
   declarations: [
@@ -83,7 +85,8 @@ import { SearchJsonpService } from './components/jsonp-demo/search-jsonp.service
     ChildComponent,
     HttpDemoComponent,
     SearchComponent,
-    JsonpDemoComponent
+    JsonpDemoComponent,
+    ElasticsearchDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +96,7 @@ import { SearchJsonpService } from './components/jsonp-demo/search-jsonp.service
     HttpModule,
     JsonpModule
   ],
-  providers: [SearchService, SearchWithObservableService, SearchJsonpService],
+  providers: [SearchService, SearchWithObservableService, SearchJsonpService, ElasticsearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
