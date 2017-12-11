@@ -8,7 +8,7 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
-import { HttpModule } from '@angular/http'; 
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import {
   AppComponent
@@ -53,6 +53,13 @@ import { ParentComponent } from './components/di-providers/parent.component';
 import { SimpleService } from './components/di-providers/simple.service';
 import { ChildComponent } from './components/di-providers/child.component';
 import { HttpDemoComponent } from './components/http-demo/http-demo.component';
+import { SearchComponent } from './components/search/search.component';
+import { SearchService } from './components/search/search.service';
+import { SearchWithObservableService } from './components/search/search-with-observable.service';
+import { JsonpDemoComponent } from './components/jsonp-demo/jsonp-demo.component';
+import { SearchJsonpService } from './components/jsonp-demo/search-jsonp.service';
+import { ElasticsearchDemoComponent } from './components/elasticsearch-demo/elasticsearch-demo.component';
+import { ElasticsearchService } from './components/elasticsearch-demo/elasticsearch.service';
 
 @NgModule({
   declarations: [
@@ -76,16 +83,20 @@ import { HttpDemoComponent } from './components/http-demo/http-demo.component';
     DiProvidersComponent,
     ParentComponent,
     ChildComponent,
-    HttpDemoComponent
+    HttpDemoComponent,
+    SearchComponent,
+    JsonpDemoComponent,
+    ElasticsearchDemoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    JsonpModule
   ],
-  providers: [],
+  providers: [SearchService, SearchWithObservableService, SearchJsonpService, ElasticsearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,0 +1,27 @@
+<div class="row">
+  <h3>Elasticsearch Demo</h3>
+  <h4>Create an Elasticsearch Index</h4>
+  <div class="row">
+    <h3 class="col-md-12 text-center">Elasticsearch server status: {{status}}</h3>
+  </div>
+  <div>
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="search" name="search" id="search" class="form-control" placeholder="Enter index name" #search>
+      </div>
+      <button class="btn btn-primary" (click)="createIndex(search.value)">Create Index</button>
+    </form>
+  </div>
+  <h4>Full Text search</h4>
+  <div class="row">
+    <input type="text" (keyup)="fullTextSearch($event)" placeholder="blabla" class="input">
+
+    <!-- <div *ngFor="let customerSource of customerSources">
+      <customer-details [customer]='customerSource._source'></customer-details>
+    </div>
+
+    <div *ngIf="customerSources?.length < 1">
+      <p>Not found!</p>
+    </div> -->
+  </div>
+</div>

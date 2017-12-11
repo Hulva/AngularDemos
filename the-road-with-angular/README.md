@@ -198,3 +198,33 @@ As well as listening to **output events** from the host element a directive can 
 
 > define a form model on component and link it to existing HTML form controls 
 
+## Observable
+
+### map
+
+### switch
+
+<code>switch</code> expects a stream of <code>Observables</code>, when it get an <code>Observable</code> pushed onto it’s input stream it unsubscribes from any previous <code>Observables</code> and subscribes to the new one and then emits any values from that <code>Observable</code> onto it’s output stream.
+
+Using <code>switch</code> with <code>map</code> is such a common occurrence that there is a combined operator called <code>switchMap</code>
+
+## JSONP
+
+* 1. Treat API as a javascript file.
+* 2. The API wraps the JSON response in a function who’s name we define.
+* 3. When the browser downloads the fake API script it runs it, it calls the function passing it the JSON data.
+
+## Routing
+
+> **State** is a computer science terms and means "all the stored information, at a given instant in time, to which program has access".
+
+### Router Guards
+
+> 403 is a HTTP error code specifically this one means Permission Denied
+
+* **CanActivate** - Checks to see if a user can visit a route.
+* **CanActivateChild** - Checks to see if a user can visit a routes children.
+* **CanDeactivate** - Checks to see if a user can exit a route.
+* **Resolve** - Performs route data retrieval before route activation.
+* **CanLoad** - Checks to see if a user can route to a module that lazy loaded.
+
