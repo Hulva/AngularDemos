@@ -1,0 +1,14 @@
+<div id="div1" (drop)="drop($event)" (dragover)="allowDrop($event)">
+  <!-- <img id="drag1" [ngStyle]="mystyle" src="assets/self.gif" draggable="true" (dragstart)="dragStart($event)" #myimg /> -->
+  <div *ngFor="let cube of cubes" [ngStyle]="cube.style"  draggable="true" (dragstart)="dragStart($event, cube.id)">
+    <!-- draggable cube -->
+    <div>
+        <i class="fa fa-times-circle" aria-hidden="true" [ngStyle]="{'position': 'relative', top: '-4px', left: cube.style.width}" 
+          (click)="removeCube(cube.id)"></i>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+</div>
+<button (click)="addCube()">Add cube</button>
