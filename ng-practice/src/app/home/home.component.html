@@ -1,0 +1,30 @@
+<section class="kanban" #kanban>
+
+  <h2 class="section-title">
+    <span>Angular Demo</span>
+  </h2>
+
+  <div class="board" #board>
+    <div class="board-column todo">
+      <div class="board-column-header">你</div>
+      <div class="board-column-content">
+      </div>
+    </div>
+    <div class="board-column working">
+      <div class="board-column-header">好</div>
+      <div class="board-column-content">
+        <div *ngFor="let demo of demos" class="board-item">
+          <div class="board-item-content">
+              <span><a [routerLink]="demo.link">{{ demo.value }}</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="board-column done">
+      <div class="board-column-header">呀</div>
+      <div class="board-column-content">
+      </div>
+    </div>
+  </div>
+
+</section>
