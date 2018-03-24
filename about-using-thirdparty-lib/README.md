@@ -1,5 +1,7 @@
 # Using non-Typescript libraries
 
+> Check this -> **[3rd Party Library Installation](https://github.com/angular/angular-cli/wiki/stories-third-party-lib)**
+
 ## import the library
 
 `npm install the-third-lib --save`
