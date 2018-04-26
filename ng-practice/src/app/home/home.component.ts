@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewChildren, AfterViewInit } from '@angular/core';
 import * as Muuri from 'Muuri';
+import { environment } from '../../environments/environment';
 import { Demo } from '../shared/classes/demo';
 
 @Component({
@@ -27,19 +28,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor() {
     this.demos = [];
-    this.demos.push(new Demo(Date.now(), 'muuri', 'Muuri Demo'));
-    this.demos.push(new Demo(Date.now(), 'Demo1', 'Demo1'));
-    console.log(this.demos);
+    environment.demoList
+      .forEach(demo => this.demos.push(new Demo(Date.now(), demo.link, demo.displayValue)));
   }
 
   ngOnInit() {
     this.itemContainers = this.kanban.nativeElement.querySelectorAll('.board-column-content');
-    console.log('ngOnInit');
   }
 
   ngAfterViewInit() {
     this.init();
-    console.log('ngAfterViewInit');
   }
 
   init(): void {
@@ -61,6 +59,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         layoutDuration: 400,
         layoutEasing: 'ease',
         dragEnabled: true,
+        dragStartPredicate: {
+          handle: '.board-item-header'
+        },
         dragSort: () => {
           return this.columnGrids;
         },

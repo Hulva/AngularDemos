@@ -80,13 +80,22 @@
 
 .board-item-content {
   position: relative;
-  padding: 20px;
+  padding: 16px;
   background: #fff;
   border-radius: 4px;
   font-size: 17px;
+  text-align: center;
   cursor: pointer;
   -webkit-box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.board-item-header {
+  cursor: move;
+  width: 50%;
+  margin-left: 25%;
+  height: 20px;
+  background-color: #2ac06d;
 }
 
 @media (max-width: 600px) {

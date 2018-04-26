@@ -14,6 +14,7 @@
       <div class="board-column-header">好</div>
       <div class="board-column-content">
         <div *ngFor="let demo of demos" class="board-item">
+          <div class="board-item-header"></div>
           <div class="board-item-content">
               <span><a [routerLink]="demo.link">{{ demo.value }}</a></span>
           </div>

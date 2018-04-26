@@ -9,6 +9,6 @@ describe('ng-practice App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to luva-practice!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });

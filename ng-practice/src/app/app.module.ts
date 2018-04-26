@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { NgxPopperModule } from 'ngx-popper';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -17,7 +17,6 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    // NgxPopperModule,
     NgbModule,
     AppRoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })

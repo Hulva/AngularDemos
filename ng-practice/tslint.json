@@ -120,13 +120,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "luva-practice",
+      "app",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "luva-practice",
+      "app",
       "kebab-case"
     ],
     "no-output-on-prefix": true,
