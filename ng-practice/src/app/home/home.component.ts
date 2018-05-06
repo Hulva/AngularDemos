@@ -27,8 +27,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor() {
     this.demos = [];
-    this.demos.push(new Demo(Date.now(), 'muuri', 'Muuri Demo'));
-    this.demos.push(new Demo(Date.now(), 'Demo1', 'Demo1'));
+    this.demos.push(new Demo(Date.now(), '/muuri', 'Muuri Demo'));
+    this.demos.push(new Demo(Date.now(), '/Demo1', 'Demo1'));
     console.log(this.demos);
   }
 
@@ -67,7 +67,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
         dragSortInterval: 0,
         dragContainer: document.body,
         dragReleaseDuration: 400,
-        dragReleaseEasing: 'ease'
+        dragReleaseEasing: 'ease',
+        // visibleStyles: {
+        //   opacity: 1,
+        //   transform: 'rotate(45deg)'
+        // },
+        // hiddenStyles: {
+        //   opacity: 0,
+        //   transform: 'rotate(-45deg)'
+        // }
       })
       .on('dragStart', (item) => {
         this.dragCounter = this.dragCounter + 1;
