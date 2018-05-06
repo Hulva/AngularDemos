@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-  },
-  {
-    path: 'muuri',
-    loadChildren: './muuri-demo/muuri-demo.module#MuuriDemoModule'
   },
   {
     path: '**',
@@ -22,4 +19,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor(private router: Router) {
+    const demoRoutes = [];
+    environment.demoList.forEach(demo => demoRoutes.push({ path: demo.link, loadChildren: demo.module }));
+    this.router.config.unshift(...demoRoutes);
+  }
+}
